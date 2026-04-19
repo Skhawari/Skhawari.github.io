@@ -1,171 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sajjad Khawari — GitHub Landing</title>
-  <meta name="description" content="Sajjad Khawari • Bioinformatics & ML — projects, languages, and links." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sajjad Khawari | Bioinformatics & AI Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Sajjad Khawari, MSc Bioinformatics student at Freie Universität Berlin focused on AI, biomedical image analysis, sequencing workflows, and applied data science."
+  />
+
   <style>
-    :root{
-      --bg:#0b0f14; --panel:#0f1620; --card:#121a24; --text:#eaf2fb; --muted:#a9b8c7;
-      --brand:#5ac8fa; --accent:#a78bfa; --border:rgba(255,255,255,.08); --radius:16px;
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: rgba(30, 41, 59, 0.78);
+      --card-strong: rgba(15, 23, 42, 0.92);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --border: rgba(148, 163, 184, 0.24);
+      --shadow: rgba(0, 0, 0, 0.26);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:radial-gradient(900px 500px at -10% -20%, rgba(90,200,250,.12), transparent),radial-gradient(900px 500px at 110% -30%, rgba(167,139,250,.10), transparent), var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:980px;margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:16px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#001018;font-weight:800}
-    .links{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{border:1px solid var(--border);background:linear-gradient(180deg,#122031,#0f1b28);padding:10px 14px;border-radius:12px}
-    .btn.primary{background:linear-gradient(180deg,#5ac8fa,#3eb9f5);color:#04121a;border-color:transparent;font-weight:800}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;padding:28px 0}
-    h1{font-size:38px;line-height:1.05;margin:10px 0}
-    p.muted{color:var(--muted);}
-    .pill{display:inline-block;padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}
-    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-    .metric{background:var(--card);border:1px solid var(--border);padding:14px;border-radius:14px;text-align:center}
-    .metric .n{font-weight:800;font-size:22px}
-    section{padding:10px 0}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
-    .card h3{margin:0 0 6px;font-size:18px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .tag{padding:4px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}
-    .lang-cloud{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    footer{color:var(--muted);text-align:center;margin:32px 0 10px;font-size:13px}
-    @media(max-width:860px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:600px){.grid{grid-template-columns:1fr} h1{font-size:30px}}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.10), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(15, 23, 42, 0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      min-height: 88vh;
+      padding: 92px 0 72px;
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 5vw, 4.8rem);
+      line-height: 1.05;
+      margin-bottom: 22px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-text {
+      font-size: 1.12rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: 0.2s ease;
+      font-size: 0.96rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #082f49;
+      border-color: transparent;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(56, 189, 248, 0.22);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.34);
+    }
+
+    .btn-secondary:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .profile-card {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.88), rgba(15, 23, 42, 0.92));
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 22px 74px var(--shadow);
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 26px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(56, 189, 248, 0.36);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .profile-card h2 {
+      margin-bottom: 8px;
+      font-size: 1.45rem;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .meta {
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .meta a {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.35rem);
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-text {
+      color: var(--muted);
+      max-width: 790px;
+      margin-bottom: 34px;
+      font-size: 1.04rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      transition: 0.2s ease;
+      min-height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.55);
+      background: rgba(30, 41, 59, 0.92);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.22);
+    }
+
+    .projects {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.52);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.13), rgba(30, 41, 59, 0.84));
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 30px;
+      padding: 36px;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 72px;
+      }
+
+      .grid,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="avatar">SK</div>
-        <div>
-          <strong style="display:block">Sajjad Khawari</strong>
-          <span style="color:var(--muted);font-size:12px">Bioinformatics • ML • Genomics</span>
-        </div>
-      </div>
-      <div class="links">
-        <a class="btn" href="https://www.linkedin.com/in/sajjad-khawari/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn primary" href="https://github.com/Skhawari" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </header>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">Sajjad Khawari</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero">
+  <main>
+    <section class="container hero" id="about">
       <div>
-        <span class="pill">Open‑source • AI • Bioinformatics</span>
-        <h1>Hi, I’m Sajjad — I build practical pipelines and ML for real‑world biology.</h1>
-        <p class="muted">On this page you’ll find a quick snapshot: languages I use, a few highlighted repositories, and links to connect.</p>
-        <div class="metrics">
-          <div class="metric"><div class="n" id="repoCount">—</div><div class="lab">Public repos</div></div>
-          <div class="metric" id="starMetric"><div class="n" id="starCount">—</div><div class="lab" id="starLabel">Total stars</div></div>
-          <div class="metric"><div class="n" id="years">—</div><div class="lab">Years on GitHub</div></div>
+        <div class="eyebrow">Bioinformatics · AI · Biomedical Data Science</div>
+        <h1>Hi, I’m Sajjad. I build practical AI and data tools for life science problems.</h1>
+        <p class="hero-text">
+          I am an MSc Bioinformatics student at Freie Universität Berlin, based in Berlin. My work focuses on applied
+          machine learning, biomedical image analysis, sequencing workflows, and clean Python-based tools for biological
+          data analysis.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/Skhawari" target="_blank" rel="noreferrer">View GitHub</a>
+          <a class="btn btn-secondary" href="https://nostra-omics.com/" target="_blank" rel="noreferrer">Visit Nostra Omics</a>
+          <a class="btn btn-secondary" href="#projects">See Projects</a>
         </div>
       </div>
-      <div class="card">
-        <h3 style="margin-top:0">Languages & Tools</h3>
-        <div id="langCloud" class="lang-cloud"></div>
-        <p class="muted" style="margin-top:8px;font-size:12px">Auto‑detected from public repos.</p>
+
+      <aside class="profile-card" aria-label="Profile summary">
+        <div class="avatar">SK</div>
+        <h2>Sajjad Khawari</h2>
+        <p>MSc Bioinformatics Student</p>
+        <div class="meta">
+          <span>📍 Berlin, Germany</span>
+          <span>🎓 Freie Universität Berlin</span>
+          <span>💻 Python · Machine Learning · Bioinformatics</span>
+          <span>🔬 Biomedical image and sequencing data analysis</span>
+          <span>🌐 <a href="https://nostra-omics.com/" target="_blank" rel="noreferrer">nostra-omics.com</a></span>
+          <span>✉️ <a href="mailto:s.khawari@fu-berlin.de">s.khawari@fu-berlin.de</a></span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container" id="focus">
+      <h2 class="section-title">Focus areas</h2>
+      <p class="section-text">
+        I like working on projects where biology, data, and software come together. My focus is not only on building
+        models, but also on making workflows understandable, reproducible, and useful for real analysis tasks.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Biomedical Image Analysis</h3>
+          <p>
+            Instance segmentation and classification of microscopy images, with a focus on biological objects such as
+            worm eggs and developmental stages.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Sequencing Workflows</h3>
+          <p>
+            Reproducible workflows for bacterial genome analysis, including quality control, assembly, annotation, and
+            comparative genomics.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Applied Machine Learning</h3>
+          <p>
+            Applied ML projects for biological and biomedical datasets, including classification, feature analysis,
+            evaluation, and interpretation.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2 style="margin:8px 0 10px">Featured Repositories</h2>
-      <div id="projectGrid" class="grid"></div>
+    <section class="container" id="projects">
+      <h2 class="section-title">Selected projects</h2>
+      <p class="section-text">
+        A selected overview of projects from my GitHub profile and university work. These projects reflect my main
+        interests: bioinformatics, machine learning, sequencing data, and biomedical image analysis.
+      </p>
+
+      <div class="grid projects">
+        <article class="card">
+          <h3>Ascaris Stage Segmentation</h3>
+          <p>
+            AI-assisted instance segmentation and developmental stage classification of <em>Ascaris suum</em>
+            embryogenesis microscopy images. The project combines annotation, model training, evaluation, and biological
+            image analysis.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Computer Vision</span>
+            <span class="tag">YOLO</span>
+            <span class="tag">Microscopy</span>
+            <span class="tag">Python</span>
+          </div>
+          <a class="project-link" href="https://github.com/Skhawari/ascaris-stage-segmentation" target="_blank" rel="noreferrer">Open repository →</a>
+        </article>
+
+        <article class="card">
+          <h3>Outbreak Detection for SARS-CoV-2</h3>
+          <p>
+            Practical course project at FU Berlin and RKI focused on outbreak detection using SARS-CoV-2 sequencing data
+            and metadata. The work connects bioinformatics analysis with a public health use case.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Bioinformatics</span>
+            <span class="tag">Sequencing</span>
+            <span class="tag">Public Health</span>
+            <span class="tag">Python</span>
+          </div>
+          <a class="project-link" href="https://github.com/Skhawari/Outbreak-detection-for-SARS-CoV-2" target="_blank" rel="noreferrer">Open repository →</a>
+        </article>
+
+        <article class="card">
+          <h3>Bacterial Genome Analysis</h3>
+          <p>
+            Reproducible bacterial genome analysis workflow with quality control, assembly, annotation, and downstream
+            analysis. Built with a focus on structure, automation, and reproducibility.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Genomics</span>
+            <span class="tag">Workflow</span>
+            <span class="tag">Python</span>
+            <span class="tag">Reproducibility</span>
+          </div>
+          <a class="project-link" href="https://github.com/Skhawari/bacterial_genome_analysis" target="_blank" rel="noreferrer">Open repository →</a>
+        </article>
+
+        <article class="card">
+          <h3>Applied Sequence Analysis</h3>
+          <p>
+            Applied sequence analysis project focused on practical bioinformatics workflows and Python-based analysis of
+            sequencing data.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Sequence Analysis</span>
+            <span class="tag">Bioinformatics</span>
+            <span class="tag">Python</span>
+          </div>
+          <a class="project-link" href="https://github.com/Skhawari/applied-SeqAn" target="_blank" rel="noreferrer">Open repository →</a>
+        </article>
+
+        <article class="card">
+          <h3>Machine Learning and AI in Life Science</h3>
+          <p>
+            Course-related machine learning projects and implementations for life science data analysis, including model
+            development, evaluation, and practical coding exercises.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Data Science</span>
+            <span class="tag">Life Sciences</span>
+            <span class="tag">Jupyter</span>
+          </div>
+          <a class="project-link" href="https://github.com/Skhawari/MLAndAI" target="_blank" rel="noreferrer">Open repository →</a>
+        </article>
+
+        <article class="card">
+          <h3>Bachelor Thesis</h3>
+          <p>
+            Bachelor thesis project on implementing a recursive run-length block approach in the context of the FM-index.
+            The project reflects my background in algorithmic bioinformatics and data structures.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Algorithms</span>
+            <span class="tag">FM-index</span>
+            <span class="tag">Data Structures</span>
+            <span class="tag">Jupyter</span>
+          </div>
+          <a class="project-link" href="https://github.com/Skhawari/Bachelor-thesis" target="_blank" rel="noreferrer">Open repository →</a>
+        </article>
+      </div>
     </section>
 
-    <footer>© <span id="year"></span> Sajjad Khawari • <a href="https://github.com/Skhawari" target="_blank" rel="noopener">github.com/Skhawari</a></footer>
-  </div>
+    <section class="container" id="skills">
+      <h2 class="section-title">Skills and tools</h2>
+      <p class="section-text">
+        Tools and topics I use across my academic and practical projects.
+      </p>
+      <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">Jupyter Notebook</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">Bioinformatics</span>
+        <span class="skill">Biomedical Image Analysis</span>
+        <span class="skill">Computer Vision</span>
+        <span class="skill">Sequencing Data</span>
+        <span class="skill">Genomics</span>
+        <span class="skill">Data Analysis</span>
+        <span class="skill">Reproducible Workflows</span>
+        <span class="skill">HTML/CSS</span>
+        <span class="skill">GitHub</span>
+      </div>
+    </section>
 
-  <script>
-    const USER = 'Skhawari';
-    const GITHUB = 'https://github.com/Skhawari';
+    <section class="container" id="contact">
+      <div class="contact-box">
+        <div>
+          <h2 class="section-title">Let’s connect</h2>
+          <p class="section-text" style="margin-bottom: 0;">
+            I am open to research collaborations, student projects, internships, and practical work in bioinformatics,
+            applied AI, biomedical image analysis, and data-driven life science projects.
+          </p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:s.khawari@fu-berlin.de">Email me</a>
+          <a class="btn btn-secondary" href="https://github.com/Skhawari" target="_blank" rel="noreferrer">GitHub Profile</a>
+          <a class="btn btn-secondary" href="https://nostra-omics.com/" target="_blank" rel="noreferrer">Nostra Omics</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    // utility: small tag element
-    const tag = (t)=>{const s=document.createElement('span');s.className='tag';s.textContent=t;return s};
-
-    async function main(){
-      // Profile
-      const uRes = await fetch(`https://api.github.com/users/${USER}`);
-      const u = await uRes.json();
-      document.getElementById('repoCount').textContent = u.public_repos ?? '—';
-      if(u.created_at){
-        const years = Math.max(1, Math.floor((Date.now()-new Date(u.created_at))/ (1000*60*60*24*365)));
-        document.getElementById('years').textContent = years;
-      }
-
-      // Repositories (first 100, sorted by updated)
-      const rRes = await fetch(`https://api.github.com/users/${USER}/repos?per_page=100&sort=updated`);
-      const repos = await rRes.json();
-      if(!Array.isArray(repos)) return;
-
-      // Language cloud (aggregate top languages across repos)
-      const langCount = new Map();
-      for(const r of repos){
-        if(r.language){ langCount.set(r.language, (langCount.get(r.language)||0)+1); }
-      }
-      const topLangs = Array.from(langCount.entries()).sort((a,b)=>b[1]-a[1]).slice(0,10);
-      const cloud = document.getElementById('langCloud');
-      if(topLangs.length===0){ cloud.append(tag('Python')); cloud.append(tag('C++')); }
-      else{
-        for(const [name,count] of topLangs){ cloud.append(tag(`${name} · ${count}`)); }
-      }
-
-      // Stars total
-      const stars = repos.reduce((s,r)=> s + (r.stargazers_count||0), 0);
-      const starMetric = document.getElementById('starMetric');
-      const starCountEl = document.getElementById('starCount');
-      const starLabelEl = document.getElementById('starLabel');
-      if(stars && stars > 0){
-        starCountEl.textContent = stars;
-        starLabelEl.textContent = 'Total stars';
-      } else {
-        // If no stars yet, show a friendly message
-        starCountEl.textContent = '—';
-        starLabelEl.textContent = 'Building in public ✨';
-      }
-
-      // Featured: pick a few interesting repos (by stars then recent updates)
-      const picks = repos
-        .filter(r=>!r.fork)
-        .sort((a,b)=> (b.stargazers_count-a.stargazers_count) || (new Date(b.updated_at)-new Date(a.updated_at)))
-        .slice(0,6);
-
-      const grid = document.getElementById('projectGrid');
-      if(picks.length===0){
-        const empty = document.createElement('div');
-        empty.className='card';
-        empty.innerHTML = `<h3>No public repositories yet</h3><p class="muted">Once you push projects, they’ll appear here automatically.</p>`;
-        grid.append(empty);
-      }else{
-        for(const r of picks){
-          const a = document.createElement('a');
-          a.className='card';
-          a.href=r.html_url; a.target='_blank'; a.rel='noopener';
-          const desc = r.description ? r.description : '—';
-          a.innerHTML = `
-            <h3>${r.name}</h3>
-            <p>${desc}</p>
-            <div class="tags">
-              <span class="tag">★ ${r.stargazers_count}</span>
-              <span class="tag">${r.language||'—'}</span>
-              <span class="tag">Updated ${new Date(r.updated_at).toLocaleDateString()}</span>
-            </div>`;
-          grid.append(a);
-        }
-      }
-    }
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-    main().catch(()=>{});
-  </script>
+  <footer>
+    <div class="container">
+      © 2026 Sajjad Khawari. Built with HTML and CSS. Hosted on GitHub Pages.
+    </div>
+  </footer>
 </body>
 </html>
