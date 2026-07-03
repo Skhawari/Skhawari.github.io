@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sajjad Khawari | Bioinformatics & AI Portfolio</title>
+
+  <title>Sajjad Khawari | Bioinformatics & Computational Biology</title>
   <meta
     name="description"
-    content="Portfolio of Sajjad Khawari, MSc Bioinformatics student at Freie Universität Berlin focused on AI, biomedical image analysis, sequencing workflows, and applied data science."
+    content="Personal research page of Sajjad Khawari, M.Sc. Bioinformatics student at Freie Universität Berlin working on bioinformatics workflows, computer vision, and biological data analysis."
   />
 
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-soft: #111827;
-      --card: rgba(30, 41, 59, 0.78);
-      --card-strong: rgba(15, 23, 42, 0.92);
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-2: #22c55e;
-      --accent-soft: rgba(56, 189, 248, 0.12);
-      --border: rgba(148, 163, 184, 0.24);
-      --shadow: rgba(0, 0, 0, 0.26);
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --surface-soft: #f1f5f9;
+      --text: #111827;
+      --muted: #5b6472;
+      --muted-light: #7b8494;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --shadow: rgba(15, 23, 42, 0.08);
+      --radius: 18px;
     }
 
     * {
@@ -35,13 +36,10 @@
     }
 
     body {
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 32%),
-        radial-gradient(circle at top right, rgba(34, 197, 94, 0.10), transparent 30%),
-        var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a {
@@ -50,7 +48,7 @@
     }
 
     .container {
-      width: min(1120px, 92%);
+      width: min(1080px, 92%);
       margin: 0 auto;
     }
 
@@ -58,8 +56,8 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(15, 23, 42, 0.78);
+      background: rgba(247, 248, 251, 0.86);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
 
@@ -67,19 +65,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      padding: 16px 0;
     }
 
     .logo {
-      font-weight: 800;
-      letter-spacing: 0.02em;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
     .nav-links {
       display: flex;
       gap: 22px;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
 
     .nav-links a:hover {
@@ -87,135 +85,146 @@
     }
 
     .hero {
-      min-height: 88vh;
-      padding: 92px 0 72px;
+      padding: 88px 0 64px;
       display: grid;
-      grid-template-columns: 1.35fr 0.85fr;
+      grid-template-columns: 1.35fr 0.75fr;
       gap: 56px;
-      align-items: center;
+      align-items: start;
     }
 
     .eyebrow {
       color: var(--accent);
       font-weight: 700;
-      margin-bottom: 14px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
+      margin-bottom: 14px;
     }
 
     h1 {
-      font-size: clamp(2.45rem, 5vw, 4.8rem);
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
       line-height: 1.05;
+      letter-spacing: -0.055em;
       margin-bottom: 22px;
-      letter-spacing: -0.04em;
     }
 
-    .hero-text {
+    .lead {
       font-size: 1.12rem;
       color: var(--muted);
-      max-width: 700px;
-      margin-bottom: 30px;
+      max-width: 760px;
+      margin-bottom: 28px;
     }
 
     .actions {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
+      margin-top: 26px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 18px;
+      padding: 11px 16px;
       border-radius: 999px;
-      font-weight: 700;
+      font-weight: 650;
       border: 1px solid var(--border);
-      transition: 0.2s ease;
-      font-size: 0.96rem;
+      transition: 0.18s ease;
+      font-size: 0.95rem;
+      background: var(--surface);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     .btn-primary {
       background: var(--accent);
-      color: #082f49;
-      border-color: transparent;
+      color: white;
+      border-color: var(--accent);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 32px rgba(56, 189, 248, 0.22);
+      color: white;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.22);
     }
 
-    .btn-secondary {
-      color: var(--text);
-      background: rgba(15, 23, 42, 0.34);
-    }
-
-    .btn-secondary:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .profile-card {
-      background: linear-gradient(145deg, rgba(30, 41, 59, 0.88), rgba(15, 23, 42, 0.92));
+    .side-card {
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 30px;
-      padding: 30px;
-      box-shadow: 0 22px 74px var(--shadow);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 18px 48px var(--shadow);
     }
 
     .avatar {
-      width: 88px;
-      height: 88px;
-      border-radius: 26px;
+      width: 78px;
+      height: 78px;
+      border-radius: 20px;
       background: var(--accent-soft);
-      border: 1px solid rgba(56, 189, 248, 0.36);
+      color: var(--accent);
       display: grid;
       place-items: center;
-      color: var(--accent);
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 22px;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 18px;
     }
 
-    .profile-card h2 {
-      margin-bottom: 8px;
-      font-size: 1.45rem;
+    .side-card h2 {
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
     }
 
-    .profile-card p {
+    .side-card .role {
       color: var(--muted);
       margin-bottom: 18px;
     }
 
-    .meta {
+    .info-list {
       display: grid;
-      gap: 12px;
+      gap: 11px;
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.95rem;
     }
 
-    .meta a {
+    .info-list strong {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .info-list a {
       color: var(--accent);
     }
 
     section {
-      padding: 76px 0;
+      padding: 58px 0;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
     }
 
     .section-title {
-      font-size: clamp(1.8rem, 3vw, 2.35rem);
-      margin-bottom: 14px;
-      letter-spacing: -0.03em;
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      letter-spacing: -0.045em;
+      line-height: 1.14;
+      margin-bottom: 16px;
     }
 
     .section-text {
       color: var(--muted);
       max-width: 790px;
-      margin-bottom: 34px;
-      font-size: 1.04rem;
+      margin-bottom: 30px;
+      font-size: 1.02rem;
     }
 
     .grid {
@@ -224,111 +233,142 @@
       gap: 18px;
     }
 
+    .grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .card {
-      background: var(--card);
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 24px;
-      transition: 0.2s ease;
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
       min-height: 100%;
+      transition: 0.18s ease;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.55);
-      background: rgba(30, 41, 59, 0.92);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
     }
 
     .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.12rem;
+      font-size: 1.08rem;
+      margin-bottom: 9px;
+      letter-spacing: -0.02em;
     }
 
     .card p {
       color: var(--muted);
-      font-size: 0.97rem;
+      font-size: 0.96rem;
     }
 
-    .tag-row {
+    .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
+      gap: 7px;
+      margin-top: 16px;
     }
 
     .tag {
-      font-size: 0.78rem;
-      color: var(--accent);
+      font-size: 0.76rem;
+      color: #1d4ed8;
       background: var(--accent-soft);
-      padding: 5px 9px;
+      padding: 4px 9px;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.22);
-    }
-
-    .projects {
-      grid-template-columns: repeat(2, 1fr);
+      border: 1px solid #bfdbfe;
     }
 
     .project-link {
       display: inline-block;
-      margin-top: 18px;
+      margin-top: 16px;
       color: var(--accent);
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
 
-    .skills {
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .skill-group h3 {
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+
+    .skill-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
 
     .skill {
-      padding: 9px 12px;
+      padding: 7px 10px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.52);
-      border: 1px solid var(--border);
+      background: var(--surface-soft);
       color: var(--muted);
-      font-size: 0.93rem;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .note-box {
+      background: #eef6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .note-box p {
+      color: #334155;
     }
 
     .contact-box {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.13), rgba(30, 41, 59, 0.84));
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 30px;
-      padding: 36px;
-      display: flex;
-      justify-content: space-between;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 24px;
       align-items: center;
+      box-shadow: 0 16px 38px var(--shadow);
     }
 
     footer {
-      padding: 36px 0;
+      padding: 34px 0;
       border-top: 1px solid var(--border);
-      color: var(--muted);
+      color: var(--muted-light);
       font-size: 0.9rem;
     }
 
     @media (max-width: 900px) {
-      .hero {
+      .hero,
+      .contact-box {
         grid-template-columns: 1fr;
-        min-height: auto;
-        padding-top: 72px;
       }
 
       .grid,
-      .projects {
+      .grid.two,
+      .skills-wrap {
         grid-template-columns: 1fr;
-      }
-
-      .contact-box {
-        flex-direction: column;
-        align-items: flex-start;
       }
 
       .nav-links {
         display: none;
+      }
+
+      .hero {
+        padding-top: 62px;
       }
     }
   </style>
@@ -339,102 +379,106 @@
     <div class="container nav">
       <a class="logo" href="#">Sajjad Khawari</a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#focus">Focus</a>
+        <a href="#research">Research</a>
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
+        <a href="#tools">Tools</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="container hero" id="about">
+    <section class="container hero">
       <div>
-        <div class="eyebrow">Bioinformatics · AI · Biomedical Data Science</div>
-        <h1>Hi, I’m Sajjad. I build practical AI and data tools for life science problems.</h1>
-        <p class="hero-text">
-          I am an MSc Bioinformatics student at Freie Universität Berlin, based in Berlin. My work focuses on applied
-          machine learning, biomedical image analysis, sequencing workflows, and clean Python-based tools for biological
-          data analysis.
+        <div class="eyebrow">Bioinformatics · Computational Biology · Research Software</div>
+        <h1>Hi, I’m Sajjad Khawari.</h1>
+        <p class="lead">
+          I am an M.Sc. Bioinformatics student at Freie Universität Berlin. I work on reproducible
+          bioinformatics software, computer vision models, and data analysis workflows for biological research.
         </p>
+        <p class="lead">
+          My current interests include microscopy image analysis, genome analysis, annotation refinement,
+          and practical research tools that can be used and extended by other scientists.
+        </p>
+
         <div class="actions">
-          <a class="btn btn-primary" href="https://github.com/Skhawari" target="_blank" rel="noreferrer">View GitHub</a>
-          <a class="btn btn-secondary" href="https://nostra-omics.com/" target="_blank" rel="noreferrer">Visit Nostra Omics</a>
-          <a class="btn btn-secondary" href="https://www.linkedin.com/in/sajjad-khawari/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn btn-secondary" href="#projects">See Projects</a>
+          <a class="btn btn-primary" href="https://github.com/Skhawari" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/sajjad-khawari/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://nostra-omics.com/" target="_blank" rel="noreferrer">Nostra Omics</a>
+          <a class="btn" href="#projects">Selected projects</a>
         </div>
       </div>
 
-      <aside class="profile-card" aria-label="Profile summary">
+      <aside class="side-card" aria-label="Profile summary">
         <div class="avatar">SK</div>
         <h2>Sajjad Khawari</h2>
-        <p>MSc Bioinformatics Student</p>
-        <div class="meta">
-          <span>📍 Berlin, Germany</span>
-          <span>🎓 Freie Universität Berlin</span>
-          <span>💻 Python · Machine Learning · Bioinformatics</span>
-          <span>🔬 Biomedical image and sequencing data analysis</span>
-          <span>🌐 <a href="https://nostra-omics.com/" target="_blank" rel="noreferrer">nostra-omics.com</a></span>
-          <span>🔗 <a href="https://www.linkedin.com/in/sajjad-khawari/" target="_blank" rel="noreferrer">LinkedIn</a></span>
-          <span>✉️ <a href="mailto:s.khawari@fu-berlin.de">s.khawari@fu-berlin.de</a></span>
+        <p class="role">M.Sc. Bioinformatics Student</p>
+
+        <div class="info-list">
+          <span><strong>Location:</strong> Berlin, Germany</span>
+          <span><strong>University:</strong> Freie Universität Berlin</span>
+          <span><strong>Research:</strong> Bioinformatics, computer vision, genomics</span>
+          <span><strong>Languages:</strong> Python, C++, R, Bash</span>
+          <span><strong>Tools:</strong> Git, Linux, Snakemake, Jupyter</span>
+          <span><strong>Email:</strong> <a href="mailto:s.khawari@fu-berlin.de">s.khawari@fu-berlin.de</a></span>
         </div>
       </aside>
     </section>
 
-    <section class="container" id="focus">
-      <h2 class="section-title">Focus areas</h2>
+    <section class="container" id="research">
+      <div class="section-kicker">Current focus</div>
+      <h2 class="section-title">Research interests</h2>
       <p class="section-text">
-        I like working on projects where biology, data, and software come together. My focus is not only on building
-        models, but also on making workflows understandable, reproducible, and useful for real analysis tasks.
+        I enjoy projects where biological questions, data analysis, and software engineering meet.
+        I care about tools that are not only technically correct, but also understandable and reproducible.
       </p>
 
       <div class="grid">
-        <div class="card">
-          <h3>Biomedical Image Analysis</h3>
+        <article class="card">
+          <h3>Microscopy Image Analysis</h3>
           <p>
-            Instance segmentation and classification of microscopy images, with a focus on biological objects such as
-            worm eggs and developmental stages.
+            Deep learning and image analysis methods for biological microscopy data, including segmentation,
+            classification, visualization, and annotation refinement.
           </p>
-        </div>
+        </article>
 
-        <div class="card">
-          <h3>Sequencing Workflows</h3>
+        <article class="card">
+          <h3>Genomics Workflows</h3>
           <p>
-            Reproducible workflows for bacterial genome analysis, including quality control, assembly, annotation, and
-            comparative genomics.
+            Reproducible workflows for sequencing data, bacterial genome analysis, and comparative genomics
+            with a focus on clear structure and automation.
           </p>
-        </div>
+        </article>
 
-        <div class="card">
-          <h3>Applied Machine Learning</h3>
+        <article class="card">
+          <h3>Research Software</h3>
           <p>
-            Applied ML projects for biological and biomedical datasets, including classification, feature analysis,
-            evaluation, and interpretation.
+            Practical Python and C++ tools for biological data analysis, with attention to usability,
+            documentation, and reproducible results.
           </p>
-        </div>
+        </article>
       </div>
     </section>
 
     <section class="container" id="projects">
-      <h2 class="section-title">Selected projects</h2>
+      <div class="section-kicker">Selected work</div>
+      <h2 class="section-title">Projects</h2>
       <p class="section-text">
-        A selected overview of projects from my GitHub profile and university work. These projects reflect my main
-        interests: bioinformatics, machine learning, sequencing data, and biomedical image analysis.
+        A small selection of projects from my studies, research work, and personal GitHub repositories.
+        I keep this list focused on projects that represent what I currently work on.
       </p>
 
-      <div class="grid projects">
+      <div class="grid two">
         <article class="card">
           <h3>Ascaris Stage Segmentation</h3>
           <p>
-            AI-assisted instance segmentation and developmental stage classification of <em>Ascaris suum</em>
-            embryogenesis microscopy images. The project combines annotation, model training, evaluation, and biological
-            image analysis.
+            Deep learning pipeline for segmenting and classifying developmental stages of
+            <em>Ascaris suum</em> embryos from microscopy images.
           </p>
-          <div class="tag-row">
+          <div class="tags">
+            <span class="tag">Microscopy</span>
             <span class="tag">Computer Vision</span>
             <span class="tag">YOLO</span>
-            <span class="tag">Microscopy</span>
             <span class="tag">Python</span>
           </div>
           <a class="project-link" href="https://github.com/Skhawari/ascaris-stage-segmentation" target="_blank" rel="noreferrer">Open repository →</a>
@@ -443,13 +487,13 @@
         <article class="card">
           <h3>Outbreak Detection for SARS-CoV-2</h3>
           <p>
-            Practical course project at FU Berlin and RKI focused on outbreak detection using SARS-CoV-2 sequencing data
-            and metadata. The work connects bioinformatics analysis with a public health use case.
+            Analysis of SARS-CoV-2 sequencing data for outbreak detection and genomic epidemiology
+            in a practical public health context.
           </p>
-          <div class="tag-row">
-            <span class="tag">Bioinformatics</span>
+          <div class="tags">
             <span class="tag">Sequencing</span>
             <span class="tag">Public Health</span>
+            <span class="tag">Bioinformatics</span>
             <span class="tag">Python</span>
           </div>
           <a class="project-link" href="https://github.com/Skhawari/Outbreak-detection-for-SARS-CoV-2" target="_blank" rel="noreferrer">Open repository →</a>
@@ -458,14 +502,14 @@
         <article class="card">
           <h3>Bacterial Genome Analysis</h3>
           <p>
-            Reproducible bacterial genome analysis workflow with quality control, assembly, annotation, and downstream
-            analysis. Built with a focus on structure, automation, and reproducibility.
+            Workflow for bacterial genome assembly, annotation, and downstream analysis with a focus
+            on automation and reproducibility.
           </p>
-          <div class="tag-row">
+          <div class="tags">
             <span class="tag">Genomics</span>
             <span class="tag">Workflow</span>
-            <span class="tag">Python</span>
-            <span class="tag">Reproducibility</span>
+            <span class="tag">Snakemake</span>
+            <span class="tag">Linux</span>
           </div>
           <a class="project-link" href="https://github.com/Skhawari/bacterial_genome_analysis" target="_blank" rel="noreferrer">Open repository →</a>
         </article>
@@ -473,24 +517,25 @@
         <article class="card">
           <h3>Applied Sequence Analysis</h3>
           <p>
-            Applied sequence analysis project focused on practical bioinformatics workflows and Python-based analysis of
-            sequencing data.
+            Practical sequence analysis work covering common bioinformatics tasks, workflow structure,
+            and Python-based data analysis.
           </p>
-          <div class="tag-row">
+          <div class="tags">
             <span class="tag">Sequence Analysis</span>
             <span class="tag">Bioinformatics</span>
             <span class="tag">Python</span>
+            <span class="tag">Jupyter</span>
           </div>
           <a class="project-link" href="https://github.com/Skhawari/applied-SeqAn" target="_blank" rel="noreferrer">Open repository →</a>
         </article>
 
         <article class="card">
-          <h3>Machine Learning and AI in Life Science</h3>
+          <h3>Machine Learning and AI in Life Sciences</h3>
           <p>
-            Course-related machine learning projects and implementations for life science data analysis, including model
-            development, evaluation, and practical coding exercises.
+            Course-related machine learning projects for biological and biomedical data, including
+            model development, evaluation, and interpretation.
           </p>
-          <div class="tag-row">
+          <div class="tags">
             <span class="tag">Machine Learning</span>
             <span class="tag">Data Science</span>
             <span class="tag">Life Sciences</span>
@@ -502,55 +547,98 @@
         <article class="card">
           <h3>Bachelor Thesis</h3>
           <p>
-            Bachelor thesis project on implementing a recursive run-length block approach in the context of the FM-index.
-            The project reflects my background in algorithmic bioinformatics and data structures.
+            Implementation work around recursive run-length encoding and compressed FM-index structures,
+            combining C++ programming and algorithmic bioinformatics.
           </p>
-          <div class="tag-row">
+          <div class="tags">
+            <span class="tag">C++</span>
             <span class="tag">Algorithms</span>
             <span class="tag">FM-index</span>
             <span class="tag">Data Structures</span>
-            <span class="tag">Jupyter</span>
           </div>
           <a class="project-link" href="https://github.com/Skhawari/Bachelor-thesis" target="_blank" rel="noreferrer">Open repository →</a>
         </article>
       </div>
     </section>
 
-    <section class="container" id="skills">
-      <h2 class="section-title">Skills and tools</h2>
+    <section class="container" id="tools">
+      <div class="section-kicker">Technical profile</div>
+      <h2 class="section-title">Languages, tools and methods</h2>
       <p class="section-text">
-        Tools and topics I use across my academic and practical projects.
+        I use these tools across university projects, research work, and personal software projects.
       </p>
-      <div class="skills">
-        <span class="skill">Python</span>
-        <span class="skill">Jupyter Notebook</span>
-        <span class="skill">Machine Learning</span>
-        <span class="skill">Bioinformatics</span>
-        <span class="skill">Biomedical Image Analysis</span>
-        <span class="skill">Computer Vision</span>
-        <span class="skill">Sequencing Data</span>
-        <span class="skill">Genomics</span>
-        <span class="skill">Data Analysis</span>
-        <span class="skill">Reproducible Workflows</span>
-        <span class="skill">HTML/CSS</span>
-        <span class="skill">GitHub</span>
+
+      <div class="skills-wrap">
+        <div class="skill-group">
+          <h3>Programming</h3>
+          <div class="skill-list">
+            <span class="skill">Python</span>
+            <span class="skill">C++</span>
+            <span class="skill">R</span>
+            <span class="skill">Bash</span>
+            <span class="skill">HTML/CSS</span>
+            <span class="skill">Git</span>
+            <span class="skill">Linux</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Data & Machine Learning</h3>
+          <div class="skill-list">
+            <span class="skill">NumPy</span>
+            <span class="skill">Pandas</span>
+            <span class="skill">scikit-learn</span>
+            <span class="skill">PyTorch</span>
+            <span class="skill">OpenCV</span>
+            <span class="skill">Matplotlib</span>
+            <span class="skill">Jupyter</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Bioinformatics</h3>
+          <div class="skill-list">
+            <span class="skill">Snakemake</span>
+            <span class="skill">Biopython</span>
+            <span class="skill">Genome Assembly</span>
+            <span class="skill">Sequence Analysis</span>
+            <span class="skill">Image Analysis</span>
+            <span class="skill">Workflow Development</span>
+            <span class="skill">HPC</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="note-box">
+        <div class="section-kicker">Nostra Omics</div>
+        <h2 class="section-title">Small tools for practical bioinformatics</h2>
+        <p>
+          I also work on Nostra Omics, a small platform for documenting and sharing practical bioinformatics
+          workflows and tools for labs and students.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://nostra-omics.com/" target="_blank" rel="noreferrer">Visit Nostra Omics</a>
+        </div>
       </div>
     </section>
 
     <section class="container" id="contact">
       <div class="contact-box">
         <div>
+          <div class="section-kicker">Contact</div>
           <h2 class="section-title">Let’s connect</h2>
           <p class="section-text" style="margin-bottom: 0;">
-            I am open to research collaborations, student projects, internships, and practical work in bioinformatics,
-            applied AI, biomedical image analysis, and data-driven life science projects.
+            I am always interested in discussing bioinformatics, microscopy image analysis,
+            genomics workflows, and research software. Feel free to reach out by email or LinkedIn.
           </p>
         </div>
+
         <div class="actions">
-          <a class="btn btn-primary" href="mailto:s.khawari@fu-berlin.de">Email me</a>
-          <a class="btn btn-secondary" href="https://github.com/Skhawari" target="_blank" rel="noreferrer">GitHub Profile</a>
-          <a class="btn btn-secondary" href="https://www.linkedin.com/in/sajjad-khawari/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn btn-secondary" href="https://nostra-omics.com/" target="_blank" rel="noreferrer">Nostra Omics</a>
+          <a class="btn btn-primary" href="mailto:s.khawari@fu-berlin.de">Email</a>
+          <a class="btn" href="https://github.com/Skhawari" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/sajjad-khawari/" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </div>
     </section>
@@ -558,7 +646,7 @@
 
   <footer>
     <div class="container">
-      © 2026 Sajjad Khawari. Built with HTML and CSS. Hosted on GitHub Pages.
+      © 2026 Sajjad Khawari.
     </div>
   </footer>
 </body>
